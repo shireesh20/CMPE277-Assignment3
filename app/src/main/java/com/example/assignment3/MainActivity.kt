@@ -135,11 +135,11 @@ fun analyzeImageWithOCR(context: Context, imageUri: Uri, onResult: (String) -> U
                         onResult("Unexpected code $resp")
                     } else {
                         val ocrResponseBody = resp.body?.string()
-                        onResult(ocrResponseBody ?: "No OCR result found")
+                        onResult(ocrResponseBody ?: "No result found")
                     }
                 }
             }
         })
-    } ?: onResult("Could not open file descriptor for the image.")
+    } ?: onResult("Cannot not descriptor")
 }
 
